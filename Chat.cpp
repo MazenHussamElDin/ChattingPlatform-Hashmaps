@@ -29,8 +29,8 @@ LinkedList<User> Chat::getUsers() const {
     return users;
 }
 
-void Chat::setMessage(LinkedList<Message> alist) {
-    chatMessages = alist;
+void Chat::setMessage(Message message) {
+    chatMessages.insert(message);
 }
 
 LinkedList<Message> Chat::getMessage() const {

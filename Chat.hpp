@@ -31,7 +31,7 @@ public:
     int getChatID() const;
     void setUsers(LinkedList<User> alist);
     LinkedList<User> getUsers() const;
-    void setMessage(LinkedList<Message> alist);
+    void setMessage(Message message);
     LinkedList<Message> getMessage() const;
     int getCounterChat();
     void setCounterChat(int count);
