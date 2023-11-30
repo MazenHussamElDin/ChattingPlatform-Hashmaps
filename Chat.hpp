@@ -1,18 +1,12 @@
 #include <iostream>
-#include <iomanip>
-#include <cstdlib>
-#include <vector> 
-#include <list>
-#include <algorithm>
 #include <cstring>
 #include <string>
-#include <iterator>
-#include <random>
+
 
 
 #include "LinkedList.hpp"
-#include "User.hpp"
-#include "Message.hpp"
+
+
 
 
 using namespace std;
@@ -35,8 +29,36 @@ public:
     LinkedList<Message> getMessage() const;
     int getCounterChat();
     void setCounterChat(int count);
-    
+    friend std::ostream& operator<<(std::ostream& os, const Chat& c) {
+        os << c.chatID << " " ;
+        return os;
+    }
 
 };
 
+
+
+/*
+friend std::ostream& operator<<(std::ostream& os, const Chat& chat){
+    
+    os << "Chat ID: " << chat.getChatID() << std::endl;
+    os << "Users: ";
+    LinkedList<User> users = chat.getUsers();
+    LinkedList<User>::NodePointer userPtr = users.getFirst(); // Assuming 'first' is the head pointer
+    while (userPtr != nullptr) {
+        os << userPtr->data.getName() << " ";
+        userPtr = userPtr->next;
+    }
+
+    os << std::endl << "Messages: ";
+    LinkedList<Message> messages = chat.getMessage();
+    LinkedList<Message>::NodePointer messagePtr = messages.getFirst(); // Assuming 'first' is the head pointer
+    while (messagePtr != nullptr) {
+        os << messagePtr->data.getContent() << " ";
+        messagePtr = messagePtr->next;
+    }
+
+    return os;
+}
+*/
 

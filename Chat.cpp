@@ -46,26 +46,6 @@ void Chat::setCounterChat(int count){
 }
 
 
-std::ostream& operator<<(std::ostream& os,  const Chat&  chat) {
-    os << "Chat ID: " << chat.getChatID() << std::endl;
-    os << "Users: ";
-    LinkedList<User> users = chat.getUsers();
-    LinkedList<User>::NodePointer userPtr = users.getFirst(); // Assuming 'first' is the head pointer
-    while (userPtr != nullptr) {
-        os << userPtr->data.getName() << " ";
-        userPtr = userPtr->next;
-    }
-
-    os << std::endl << "Messages: ";
-    LinkedList<Message> messages = chat.getMessage();
-    LinkedList<Message>::NodePointer messagePtr = messages.getFirst(); // Assuming 'first' is the head pointer
-    while (messagePtr != nullptr) {
-        os << messagePtr->data.getContent() << " ";
-        messagePtr = messagePtr->next;
-    }
-
-    return os;
-}
 
 int Chat::counterChat = 0; // Initialize static member variable
 

@@ -1,4 +1,5 @@
 #include "LinkedList.hpp"
+
 #include <string>
 using namespace std;
 
@@ -43,7 +44,7 @@ inline LinkedList<listdata>::~LinkedList() {
 
 
 template<typename listdata>
-const LinkedList& LinkedList<listdata>::operator=(const LinkedList& rightSide) {
+const LinkedList<listdata>& LinkedList<listdata>::operator=(const LinkedList<listdata>& rightSide) {
     mySize = rightSide.mySize;
 
     if (mySize == 0) {
@@ -142,6 +143,11 @@ void LinkedList<listdata>::display() const {
         ptr = ptr->next;
     }
 }
+
+
+template class LinkedList<Message>;
+template class LinkedList<User>;
+
 
 /*
 using namespace std;

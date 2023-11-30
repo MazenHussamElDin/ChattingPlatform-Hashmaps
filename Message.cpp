@@ -4,8 +4,7 @@
         timestamp = chrono::system_clock::now();
     }
 
-    // Destructor
-    Message::~Message() {}
+
 
     // Parameterized constructor
     Message::Message(string text, int sender) : content(text), senderID(sender) {
@@ -26,6 +25,12 @@
     int Message::getSenderID() {
         return senderID;
     }
+
+
+bool Message::operator==(const Message& other) const {
+    return (content == other.content && senderID == other.senderID && timestamp == other.timestamp);
+}
+
 
 
 /*

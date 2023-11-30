@@ -1,5 +1,9 @@
 
 #include <iostream>
+
+#include "Message.hpp"
+#include "User.hpp"
+
 using namespace std;
 
 template<typename listdata>
@@ -23,7 +27,7 @@ public:
     typedef Node* NodePointer;
     LinkedList(); // builds an empty List object; first is 0 and mySize is 0.
     LinkedList(const LinkedList& origList); // Copy constructor.
-    const LinkedList& operator=(const LinkedList& rightSide); // Assignment operator.
+    const LinkedList<listdata>& operator=(const LinkedList<listdata>& rightSide); // Assignment operator.
     ~LinkedList(); // Destructor.
     bool empty(); // Check if this list is empty.
     void insert(listdata &dataVal); // Insert a value into a list at a given index.
@@ -33,3 +37,5 @@ public:
     Node* getFirst();
 
 };
+
+

@@ -1,14 +1,8 @@
 
 #include <iostream>
-#include <iomanip>
-#include <cstdlib>
-#include <vector> 
-#include <list>
-#include <algorithm>
 #include <cstring>
 #include <string>
-#include <iterator>
-#include <random>
+
 
 
 using namespace std;
@@ -33,52 +27,15 @@ public:
     int getUserID();
     static int getCounterUser();
     static void setCounterUser(int count);
-    
+    friend std::ostream& operator<<(std::ostream& os, const User& u) {
+        os << u.name << " " << u.userID << " " << u.password;
+        return os;
+    }
+    bool operator==(const User& other) const;
 };
 
 
 
 
-/*
-#include <iostream>
-#include <iomanip>
-#include <cstdlib>
-#include <vector> 
-#include <list>
-#include <algorithm>
-#include <cstring>
-#include <string>
-#include <iterator>
 
-
-
-using namespace std;
-
-
-
-public:
-    static int counter;
-    User() ;
-    User(string username, string name, string Password) ;
-
-    int getUserID() ;
-
-    string getUsername() ;
-
-    string getname() ;
-
-    string getPassword() ;
-
-
-    void createChat(User* user2);
-
-
-    void sendMessage(string& chatID, string content, string senderID, bool found);
-
-
-
-
-
-*/
-   
 

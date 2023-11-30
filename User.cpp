@@ -45,7 +45,9 @@
 
     
     
-
+bool User::operator==(const User& other) const {
+    return (name == other.name && userID == other.userID && password == other.password);
+}
 
 
 int User::counterUser = 0; // Initialize static member variable
